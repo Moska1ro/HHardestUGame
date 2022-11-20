@@ -34,6 +34,7 @@ export class Create2 {
     this.state = this.play; // 开始游玩
     this.init(); // 初始化游戏地图及玩家角色
     this.spriteAnimationPlay();
+    this.app.ticker.maxFPS = 60;// 锁帧数
     this.app.ticker.add((delta) => this.gameLoop(delta)); // 循环动画渲染
   };
 
