@@ -103,7 +103,7 @@ export class Create2 {
         height: 40,
       }).obj,
       new Item(this, {
-        src: "./images/acceleratebrick.png",
+        src: "./images/accelerateBrick.png",
         x: 1170,
         y: window.innerHeight - 200 - 230,
         width: 100,
