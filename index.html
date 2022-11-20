@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./tools/jquery-3.6.1.min.js"></script>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./tools/pixi.min.js"></script>
+    <script src="./tools/bump.js"></script>
+    <script src="./tools/spriteUtilities.js"></script>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <title>HHardestUGame</title>
+    <script>
+        window.innerHeight = 960;
+        window.innerWidth = 1920;
+    </script>
+</head>
+
+<body background="./images/Clouds5.png">
+    <img src="./favicon.ico" style="width:250px;height:200px;position:absolute;left: 400px;top: 150px;">
+    <div class="name" style="position: absolute;left: 620px;top: 170px;font-size: 120px;">HHardestUGame</div>
+    <button id="start" type="button" class="btn btn-primary"
+        style="position: absolute;left: 700px;top: 450px;width: 600px;height: 90px;font-size: 30px;">开始</button>
+    <button id="rules" type="button" class="btn btn-info"
+        style="position: absolute;left: 700px;top: 650px;width: 600px;height: 90px;font-size: 30px;">规则</button>
+    <button id="about" type="button" type="button" class="btn btn-light"
+        style="position: absolute;left: 700px;top: 850px;width: 600px;height: 90px;font-size: 30px;">关于</butto>
+</body>
+<script type="module">
+    import { CreateInformation } from './js/CreateInformation.js';
+    import { Create } from './js/Create.js';
+    $('#start').click(() => {
+        document.body.innerHTML = '';
+        let game = new Create();
+    });
+    $('#rules').click(() => {
+        location.replace("./rules.html");
+    });
+    $('#about').click(() => {
+        document.body.innerHTML = '';
+        let info = new CreateInformation();
+    });
+</script>
+
+</html>
