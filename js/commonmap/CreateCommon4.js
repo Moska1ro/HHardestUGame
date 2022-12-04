@@ -58,7 +58,7 @@ export class CreateCommon4 {
         message.color = 'white';
         message.scale.set(3, 3);
         message.x = 20;
-        message.y = 20;
+        message.y = 90;
         this.gameScene.addChild(message);
 
 
@@ -68,7 +68,7 @@ export class CreateCommon4 {
             //过关星星或者钥匙
             new Item(this, {
                 src: "./images/star.png",
-                x: window.innerWidth - 85,
+                x: 1000,
                 y: 40,
                 width: 40,
                 height: 40,
@@ -80,178 +80,30 @@ export class CreateCommon4 {
             new Item(this, {
                 src: "./images/brick.png",
                 x: 50,
-                y: window.innerHeight - 600,
+                y: 800,
                 width: 100,
                 height: 600,
-            }).obj,
-            new Item(this, {
-                src: "./images/brick.png",
-                x: 600,
-                y: window.innerHeight - 200,
-                width: 1170,
-                height: 60,
-            }).obj,
-            new Item(this, {
-                src: "./images/brick.png",
-                x: 600,
-                y: window.innerHeight - 200 - 230,
-                width: 1100,
-                height: 60,
-            }).obj,
-            new Item(this, {
-                src: "./images/brick.png",
-                x: window.innerWidth - 1000,
-                y: 150,
-                width: 1000,
-                height: 50,
-            }).obj,
-        ];
-        this.accelerateBricks = [
-            new Item(this, {
-                src: "./images/accelerateBrick.png",
-                x: 300,
-                y: window.innerHeight - 250,
-                width: 100,
-                height: 40,
-            }).obj,
-            new Item(this, {
-                src: "./images/accelerateBrick.png",
-                x: 1170,
-                y: window.innerHeight - 200 - 230,
-                width: 100,
-                height: 59.5,
-            }).obj,
-        ];
-        this.decelerateBricks = [
-            new Item(this, {
-                src: "./images/decelerateBrick.png",
-                x: 1650,
-                y: window.innerHeight - 200 - 230 - 250,
-                width: 50,
-                height: 250,
-            }).obj,
-        ];
-        this.switchers = [
-            new Item(this, {
-                src: "./images/switcher.png",
-                x: window.innerWidth - 150,
-                y: window.innerHeight - 200,
-                width: 150,
-                height: 60,
-            }).obj,
-            new Item(this, {
-                src: "./images/switcher.png",
-                x: window.innerWidth - 760,
-                y: 150,
-                width: 100,
-                height: 49.5,
-            }).obj,
-            new Item(this, {
-                src: "./images/switcher.png",
-                x: window.innerWidth - 600,
-                y: 150,
-                width: 100,
-                height: 49.5,
-            }).obj,
-            new Item(this, {
-                src: "./images/switcher.png",
-                x: window.innerWidth - 600,
-                y: 0,
-                width: 49.5,
-                height: 60,
             }).obj,
         ];
         this.killers = [
             new Item(this, {
                 src: "./images/killer.png",
-                x: window.innerWidth - 170,
-                y: 115,
-                width: 170,
-                height: 35,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: window.innerWidth - 170,
+                x: 0,
                 y: 0,
-                width: 35,
-                height: 150,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 750,
-                y: window.innerHeight - 200 - 170,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 900,
-                y: window.innerHeight - 200 - 50,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1050,
-                y: window.innerHeight - 200 - 170,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1200,
-                y: window.innerHeight - 200 - 50,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1350,
-                y: window.innerHeight - 200 - 170,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1500,
-                y: window.innerHeight - 200 - 50,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 600,
-                y: 0,
-                width: 100,
-                height: window.innerHeight - 200 - 230,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1500,
-                y: 200,
-                width: 50,
-                height: 70,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 900,
-                y: 0,
-                width: 50,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 1050,
-                y: 100,
-                width: 50,
-                height: 50,
+                width: window.innerWidth,
+                height: 100,
             }).obj,
         ];
+
+
+        this.directionSpeed = [10];
+
+
         // 引用Sprite对象
         this.sp = new Player(this, {
             src: "player",
             x: 70,
-            y: 0,
+            y: 600,
             vx: 0,
             vy: 0,
             speedx: 8,
@@ -281,46 +133,6 @@ export class CreateCommon4 {
         b.hit(this.sp.obj, this.key, false, false, false, () => {
             this.state = this.succeed; // 碰到钥匙过关
         });
-
-        b.hit(this.sp.obj, this.accelerateBricks, true, false, false, () => {
-            this.sp.obj.speedy = 8; // 碰到加速砖块会飞
-        });
-
-        b.hit(this.sp.obj, this.decelerateBricks, true, false, false, () => {
-            this.sp.obj.speedy = 0; // 碰到减速砖块不会飞
-        });
-
-        b.hit(this.sp.obj, this.switchers[0], true, false, false, () => {
-            this.killers[0].killer = true; // 碰到开关触发杀手开始追踪
-            this.killers[7].killer = true;
-        });
-        b.hit(this.sp.obj, this.switchers[1], true, false, false, () => {
-            this.killers[1].killer = true; // 碰到开关触发杀手开始追踪
-        });
-        b.hit(this.sp.obj, this.switchers[2], true, false, false, () => {
-            this.killers[8].killer = true; // 碰到开关触发杀手开始追踪
-        });
-        b.hit(this.sp.obj, this.switchers[3], true, false, false, () => {
-            this.killers[8].killer = true; // 碰到开关触发杀手开始追踪
-        });
-        if (this.killers[0].killer === true) {
-            this.killers[0].x -= 2.5;
-            this.killers[0].width += 2.5;
-            this.killers[0].y += 2;
-            this.killers[7].x += 1;
-            this.killers[7].y -= 1;
-            this.killers[7].height += 1;
-        }
-        if (this.killers[1].killer === true) {
-            this.killers[1].x -= 6;
-        }
-        if (this.killers[8].killer === true) {
-            this.killers[8].width += 13;
-        }
-
-        b.hit(this.sp.obj, this.killers, true, false, false, () => {
-            this.state = this.end;
-        }); // 碰到杀手死亡
     };
 
     end = (delta) => {
