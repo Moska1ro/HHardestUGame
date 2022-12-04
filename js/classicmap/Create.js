@@ -1,7 +1,7 @@
-import { Item } from "./Item.js";
-import { Player } from "./Player.js";
-import { Controller } from "./Controller.js";
-import { Create3 } from "./Create3.js";
+import { Item } from "../Item.js";
+import { Player } from "../Player.js";
+import { Controller } from "../Controller.js";
+import { Create2 } from "./Create2.js";
 var b = new Bump(PIXI);
 var Application = PIXI.Application,
   Container = PIXI.Container,
@@ -17,9 +17,10 @@ var Application = PIXI.Application,
 const texture = Texture.from("./images/player.png");
 Texture.addToCache(texture, "player");
 
-export class Create2 {
-  constructor() {
+export class Create {
+  constructor(death) {
     // 可以添加一个开始界面，点击按钮开始游戏；
+    this.death = death;
     this.setup(); // 开始游戏
   }
   setup = () => {
@@ -29,6 +30,7 @@ export class Create2 {
       width: window.innerWidth,
       height: window.innerHeight,
     });
+
     this.app.renderer.backgroundColor = 0xffffff;
     document.body.appendChild(this.app.view);
     this.state = this.play; // 开始游玩
@@ -39,26 +41,35 @@ export class Create2 {
   };
 
   init = () => {
+    // 场景初始化
     this.gameScene = new Container(); // 游戏场景容器
     this.gameOverScene = new Container(); // 游戏结束界面容器
     this.gameOverScene.visible = false; // 一开始没有Game over时，结束界面不可见
     this.app.stage.addChild(this.gameScene);
     this.app.stage.addChild(this.gameOverScene);
-    this.backgroundsp = new Sprite.from("./images/Clouds2.png");
+    this.backgroundsp = new Sprite.from("./images/Clouds1.png");
     this.backgroundsp.x = 0;
     this.backgroundsp.y = 0;
     this.backgroundsp.width = window.innerWidth;
     this.backgroundsp.height = window.innerHeight;
     this.gameScene.addChild(this.backgroundsp);
 
+    let message = new Text("Lost:" + '\n' + this.death, {
+      fill: 0xF5F5F5,
+    });
+    message.color = 'white';
+    message.scale.set(3, 3);
+    message.x = 20;
+    message.y = 20;
+    this.gameScene.addChild(message);
+
     // 元素初始化
     this.controller = new Controller(this); // 传入控制器
     this.key = [
-      //过关星星或者钥匙
       new Item(this, {
         src: "./images/star.png",
-        x: window.innerWidth - 85,
-        y: 40,
+        x: window.innerWidth - 100,
+        y: 0,
         width: 40,
         height: 40,
       }).obj,
@@ -68,178 +79,95 @@ export class Create2 {
       //砖块
       new Item(this, {
         src: "./images/brick.png",
-        x: 50,
-        y: window.innerHeight - 600,
-        width: 100,
-        height: 600,
+        x: 0,
+        y: window.innerHeight - 80,
+        width: 400,
+        height: 80,
       }).obj,
       new Item(this, {
         src: "./images/brick.png",
-        x: 600,
-        y: window.innerHeight - 200,
-        width: 1170,
-        height: 60,
+        x: 500,
+        y: window.innerHeight - 80,
+        width: 200,
+        height: 80,
       }).obj,
       new Item(this, {
         src: "./images/brick.png",
-        x: 600,
-        y: window.innerHeight - 200 - 230,
-        width: 1100,
-        height: 60,
+        x: 1000,
+        y: window.innerHeight - 80,
+        width: 400,
+        height: 80,
       }).obj,
       new Item(this, {
         src: "./images/brick.png",
-        x: window.innerWidth - 1000,
-        y: 150,
-        width: 1000,
-        height: 50,
+        x: 1500,
+        y: window.innerHeight - 80,
+        width: 200,
+        height: 80,
       }).obj,
     ];
     this.accelerateBricks = [
       new Item(this, {
         src: "./images/accelerateBrick.png",
-        x: 300,
-        y: window.innerHeight - 250,
+        x: 400,
+        y: window.innerHeight - 79,
         width: 100,
-        height: 40,
+        height: 79,
       }).obj,
       new Item(this, {
         src: "./images/accelerateBrick.png",
-        x: 1170,
-        y: window.innerHeight - 200 - 230,
-        width: 100,
-        height: 59.5,
+        x: 1700,
+        y: window.innerHeight - 79,
+        width: 220,
+        height: 79,
       }).obj,
     ];
     this.decelerateBricks = [
       new Item(this, {
         src: "./images/decelerateBrick.png",
-        x: 1650,
-        y: window.innerHeight - 200 - 230 - 250,
-        width: 50,
-        height: 250,
+        x: 1150,
+        y: window.innerHeight - 500 - 80,
+        width: 80,
+        height: 500,
       }).obj,
     ];
     this.switchers = [
       new Item(this, {
         src: "./images/switcher.png",
-        x: window.innerWidth - 150,
-        y: window.innerHeight - 200,
-        width: 150,
-        height: 60,
-      }).obj,
-      new Item(this, {
-        src: "./images/switcher.png",
-        x: window.innerWidth - 760,
-        y: 150,
+        x: 1400,
+        y: window.innerHeight - 79,
         width: 100,
-        height: 49.5,
-      }).obj,
-      new Item(this, {
-        src: "./images/switcher.png",
-        x: window.innerWidth - 600,
-        y: 150,
-        width: 100,
-        height: 49.5,
-      }).obj,
-      new Item(this, {
-        src: "./images/switcher.png",
-        x: window.innerWidth - 600,
-        y: 0,
-        width: 49.5,
-        height: 60,
+        height: 79,
       }).obj,
     ];
+
     this.killers = [
       new Item(this, {
         src: "./images/killer.png",
-        x: window.innerWidth - 170,
-        y: 115,
-        width: 170,
-        height: 35,
+        x: window.innerWidth - 795,
+        y: 40,
+        width: 795,
+        height: 60,
       }).obj,
       new Item(this, {
         src: "./images/killer.png",
-        x: window.innerWidth - 170,
-        y: 0,
-        width: 35,
-        height: 150,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 750,
-        y: window.innerHeight - 200 - 170,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 900,
-        y: window.innerHeight - 200 - 50,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 1050,
-        y: window.innerHeight - 200 - 170,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 1200,
-        y: window.innerHeight - 200 - 50,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 1350,
-        y: window.innerHeight - 200 - 170,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 1500,
-        y: window.innerHeight - 200 - 50,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 600,
+        x: 200,
         y: 0,
         width: 100,
-        height: window.innerHeight - 200 - 230,
+        height: 600,
       }).obj,
       new Item(this, {
         src: "./images/killer.png",
-        x: 1500,
-        y: 200,
-        width: 50,
-        height: 70,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 900,
-        y: 0,
-        width: 50,
-        height: 50,
-      }).obj,
-      new Item(this, {
-        src: "./images/killer.png",
-        x: 1050,
-        y: 100,
-        width: 50,
-        height: 50,
+        x: 250,
+        y: 500,
+        width: 500,
+        height: 100,
       }).obj,
     ];
-    // 引用Sprite对象
+    // 生成Sprite对象作为玩家
     this.sp = new Player(this, {
       src: "player",
-      x: 70,
+      x: 0,
       y: 0,
       vx: 0,
       vy: 0,
@@ -247,7 +175,6 @@ export class Create2 {
       g: 8,
       speedy: -8,
     });
-    this.sp.obj.scale.set(1, 1);
   };
 
   gameLoop = (delta) => {
@@ -272,41 +199,19 @@ export class Create2 {
     });
 
     b.hit(this.sp.obj, this.accelerateBricks, true, false, false, () => {
-      this.sp.obj.speedy = 8; // 碰到加速砖块会飞
+      this.sp.obj.speedy = 15; // 碰到加速砖块会飞
     });
 
     b.hit(this.sp.obj, this.decelerateBricks, true, false, false, () => {
-      this.sp.obj.speedy = 0; // 碰到减速砖块不会飞
+      this.sp.obj.speedy = -this.sp.obj.g; // 碰到减速砖块不会飞
     });
 
     b.hit(this.sp.obj, this.switchers[0], true, false, false, () => {
       this.killers[0].killer = true; // 碰到开关触发杀手开始追踪
-      this.killers[7].killer = true;
-    });
-    b.hit(this.sp.obj, this.switchers[1], true, false, false, () => {
-      this.killers[1].killer = true; // 碰到开关触发杀手开始追踪
-    });
-    b.hit(this.sp.obj, this.switchers[2], true, false, false, () => {
-      this.killers[8].killer = true; // 碰到开关触发杀手开始追踪
-    });
-    b.hit(this.sp.obj, this.switchers[3], true, false, false, () => {
-      this.killers[8].killer = true; // 碰到开关触发杀手开始追踪
     });
     if (this.killers[0].killer === true) {
-      this.killers[0].x -= 2.5;
-      this.killers[0].width += 2.5;
-      this.killers[0].y += 2;
-      this.killers[7].x += 1;
-      this.killers[7].y -= 1;
-      this.killers[7].height += 1;
+      this.killers[0].y += 1;
     }
-    if (this.killers[1].killer === true) {
-      this.killers[1].x -= 6;
-    }
-    if (this.killers[8].killer === true) {
-      this.killers[8].width += 13;
-    }
-
     b.hit(this.sp.obj, this.killers, true, false, false, () => {
       this.state = this.end;
     }); // 碰到杀手死亡
@@ -328,16 +233,17 @@ export class Create2 {
   succeed = () => {
     this.app.ticker.stop();
     document.body.removeChild(this.app.view);
-    let nextGame = new Create3();
+    let nextGame = new Create2(this.death);
   };
 
   bindRestartAfterEnd = (e) => {
     if (e.key === "r") {
       document.body.removeChild(this.app.view);
       window.removeEventListener("keydown", this.bindRestartAfterEnd);
-      let nextGame = new Create2();
+      let nextGame = new Create(this.death + 1);
     }
   };
+
   bindRightAnimation = (e) => {
     if (e.key === "d") {
       this.sp.obj.playAnimation(this.sp.obj.states.walkRight);

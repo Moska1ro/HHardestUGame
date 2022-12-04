@@ -1,6 +1,6 @@
-import { Item } from "./Item.js";
-import { Player } from "./Player.js";
-import { Controller } from "./Controller.js";
+import { Item } from "../Item.js";
+import { Player } from "../Player.js";
+import { Controller } from "../Controller.js";
 var b = new Bump(PIXI);
 var Application = PIXI.Application,
   Container = PIXI.Container,
@@ -18,8 +18,8 @@ Texture.addToCache(texture, "player");
 let displacement = [5, 5, 5, 5, 7, 7, 7];
 
 export class Create3 {
-  constructor() {
-    // 可以添加一个开始界面，点击按钮开始游戏；
+  constructor(death) {
+    this.death = death;// 可以添加一个开始界面，点击按钮开始游戏；
     this.setup(); // 开始游戏
   }
   setup = () => {
@@ -52,6 +52,16 @@ export class Create3 {
     this.backgroundsp.width = window.innerWidth;
     this.backgroundsp.height = window.innerHeight;
     this.gameScene.addChild(this.backgroundsp);
+
+    let message = new Text("Lost:" + '\n' + this.death, {
+      fill: 0xF5F5F5,
+    });
+    message.color = 'white';
+    message.scale.set(3, 3);
+    message.x = 20;
+    message.y = 20;
+    this.gameScene.addChild(message);
+
 
     // 元素初始化
     this.controller = new Controller(this); // 传入控制器
@@ -377,7 +387,7 @@ export class Create3 {
     if (e.key === "r") {
       document.body.removeChild(this.app.view);
       window.removeEventListener("keydown", this.bindRestartAfterEnd);
-      let nextGame = new Create3();
+      let nextGame = new Create3(this.death + 1);
     }
   };
 
