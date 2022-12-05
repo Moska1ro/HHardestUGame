@@ -16,6 +16,9 @@
     <audio autoplay="autoplay" loop="loop" preload="metadata" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签
     </audio>
     <script>
+        if (window.innerHeight > window.innerWidth) {
+            alert("请使用横屏进行游戏以获取最佳游戏体验~");
+        }
         var t = window.innerHeight / 960;
         $('html').css("zoom", t);
         window.innerHeight = 960;
