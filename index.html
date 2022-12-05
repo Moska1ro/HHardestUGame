@@ -26,33 +26,35 @@
     </script>
 </head>
 
-<body id="body" background="./images/Clouds5.png" style="background-repeat:no-repeat">
+<body background="./images/Clouds5.png" style="background-repeat:no-repeat">
     <img src="./favicon.ico" style="width:250px;height:200px;position:absolute;left: 400px;top: 150px;">
     <div class="name" style="position: absolute;left: 620px;top: 170px;font-size: 120px;">HHardestUGame</div>
+    <button id="announcement" type="button" class="btn btn-info"
+        style="position: absolute;left: 1830px;top: 0px;width: 90px;height: 90px;font-size: 30px;">公告</button>
     <button id="rules" type="button" class="btn btn-primary"
         style="position: absolute;left: 700px;top: 450px;width: 600px;height: 90px;font-size: 30px;">规则</button>
-    <button id="start" type="button" class="btn btn-info"
-        style="position: absolute;left: 700px;top: 650px;width: 600px;height: 90px;font-size: 30px;">开始</button>
+    <button id="pattern" type="button" class="btn btn-info"
+        style="position: absolute;left: 700px;top: 650px;width: 600px;height: 90px;font-size: 30px;">模式选择</button>
     <button id="about" type="button" type="button" class="btn btn-light"
         style="position: absolute;left: 700px;top: 850px;width: 600px;height: 90px;font-size: 30px;">关于</button>
 </body>
 <script type="module">
-    let death = 0;
     import { CreateInformation } from './js/CreateInformation.js';
     import { Create } from './js/classicmap/Create.js';
     import { CreateCommon } from './js/commonmap/CreateCommon.js'
-    $('#start').click(() => {
-        document.body.innerHTML = '<audio autoplay="autoplay" loop="loop" preload="metadata" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>';
-        let game = new CreateCommon(death);
+    $('#pattern').click(() => {
+        location.replace("./pattern.html");
     });
     $('#rules').click(() => {
         location.replace("./rules.html");
     });
+    $('#announcement').click(() => {
+        location.replace("./announcement.html");
+    });
     $('#about').click(() => {
-        document.body.innerHTML = '<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>';
+        document.body.innerHTML = '';
         let info = new CreateInformation();
     });
-    // let game = new CreateCommon4(death);
 </script>
 
 </html>
