@@ -47,7 +47,7 @@ export class CreateCommon {
     this.gameOverScene.visible = false; // 一开始没有Game over时，结束界面不可见
     this.app.stage.addChild(this.gameScene);
     this.app.stage.addChild(this.gameOverScene);
-    this.backgroundsp = new Sprite.from("./images/Clouds7 .png");
+    this.backgroundsp = new Sprite.from("./images/Clouds7.png");
     this.backgroundsp.x = 0;
     this.backgroundsp.y = 0;
     this.backgroundsp.width = window.innerWidth;
