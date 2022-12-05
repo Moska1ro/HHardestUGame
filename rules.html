@@ -24,24 +24,26 @@
     <div style="position:absolute;left: 780px;top: 40px;font-size: 80px;">游戏规则</div>
     <div style="position:absolute;left: 450px;top: 180px;">
         <span style="font-size: 45px;">简介：<br /></span>
-        <spa style="font-size: 30px;">在被污染的纯净天空之上，你需要找寻唯一的那颗星星。<br />经历千辛万苦，你终将到达云朵的彼端，使天空恢复往日的色彩~<br /></spanstyle=>
-            <span style="font-size: 45px;">规则：<span style="font-size: 28px;"> (屏幕刷新率为75hz以上的玩家，请在设置中更改为60hz以获取最佳游戏体验~)</span><br /></span>
-                <span style="font-size: 28px;">1.角色控制：A左，D右，w起飞<br />
-                    2.方块介绍：<br />
-                    动力方块：触碰后可获得飞行能力，W键上升；<br />
-                    失速方块：触碰后失去飞行能力<br />
-                    杀手矩阵：具有一定智慧的污染源，触碰后直接game over<br />
-                    问号矩阵：触碰后可以激发意外事件，例如改变一些方块状态<br />
-                    3.去世：触碰污染源，或是失去飞行能力，使你不再有自由翱翔于天空世界的能力<br />
-                    4.过关判定：触碰到星星，飞向下一时空中的天空~<br /></span>
+        <span style="font-size: 30px;">在被污染的纯净天空之上，你需要找寻唯一的那颗星星。<br />经历千辛万苦，你终将到达云朵的彼端，使天空恢复往日的色彩~<br /></spanstyle=>
+            <span style="font-size: 45px;">规则：<span style="font-size: 28px;">
+                    (屏幕刷新率为75hz以上的玩家，请在设置中更改为60hz以获取最佳游戏体验~)</span><br /></span>
+            <span style="font-size: 28px;">1.角色控制：A左，D右，w起飞<br />
+                2.方块介绍：<br />
+                动力方块：触碰后可获得飞行能力，W键上升；<br />
+                失速方块：触碰后失去飞行能力<br />
+                杀手矩阵：具有一定智慧的污染源，触碰后直接game over<br />
+                问号矩阵：触碰后可以激发意外事件，例如改变一些方块状态<br />
+                3.去世：触碰污染源，或是失去飞行能力，使你不再有自由翱翔于天空世界的能力<br />
+                4.过关判定：触碰到星星，飞向下一时空中的天空~<br /></span>
     </div>
     <button type="button" class="btn btn-primary"
-        style="position:absolute;left: 780px;top: 920px;font-size: 30px;width: 320px;">返回</button>
+        style="position:absolute;left: 780px;top: 820px;font-size: 30px;width: 320px;">返回</button>
+    <script>
+        $('button').click(() => {
+            location.replace("./index.html");
+        });
+    </script>
 </body>
-<script>
-    $('button').click(() => {
-        location.replace("./index.html");
-    });
-</script>
+
 
 </html>

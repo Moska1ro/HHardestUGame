@@ -58,7 +58,7 @@ export class CreateCommon4 {
         message.color = 'white';
         message.scale.set(3, 3);
         message.x = 20;
-        message.y = 90;
+        message.y = 140;
         this.gameScene.addChild(message);
 
 
@@ -68,7 +68,7 @@ export class CreateCommon4 {
             //过关星星或者钥匙
             new Item(this, {
                 src: "./images/star.png",
-                x: 1000,
+                x: 70,
                 y: 40,
                 width: 40,
                 height: 40,
@@ -80,8 +80,36 @@ export class CreateCommon4 {
             new Item(this, {
                 src: "./images/brick.png",
                 x: 50,
-                y: 800,
-                width: 100,
+                y: 850,
+                width: 150,
+                height: 600,
+            }).obj,
+            new Item(this, {
+                src: "./images/brick.png",
+                x: 450,
+                y: 850,
+                width: 150,
+                height: 600,
+            }).obj,
+            new Item(this, {
+                src: "./images/brick.png",
+                x: 850,
+                y: 850,
+                width: 150,
+                height: 600,
+            }).obj,
+            new Item(this, {
+                src: "./images/brick.png",
+                x: 1250,
+                y: 850,
+                width: 150,
+                height: 600,
+            }).obj,
+            new Item(this, {
+                src: "./images/brick.png",
+                x: 1650,
+                y: 850,
+                width: 150,
                 height: 600,
             }).obj,
         ];
@@ -93,10 +121,95 @@ export class CreateCommon4 {
                 width: window.innerWidth,
                 height: 100,
             }).obj,
+
+
+            new Item(this, {
+                src: "./images/black.png",
+                x: 50,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 450,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 850,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 1250,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 1650,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
         ];
 
 
-        this.directionSpeed = [10];
+        this.smallKillerSpeed = [0.5, 0.2, 10, 10, 10, 10];
+
+        this.accelerateBricks = [
+            new Item(this, {
+                src: "./images/accelerateBrick.png",
+                x: 55,
+                y: 800,
+                width: 145,
+                height: 50,
+            }).obj,
+        ];
+
+        this.switchers = [
+            new Item(this, {
+                src: "./images/switcher.png",
+                x: 455,
+                y: 800,
+                width: 145,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/switcher.png",
+                x: 855,
+                y: 800,
+                width: 145,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/switcher.png",
+                x: 1255,
+                y: 800,
+                width: 145,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/switcher.png",
+                x: 1655,
+                y: 800,
+                width: 145,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/switcher.png",
+                x: 1830,
+                y: 100,
+                width: 50,
+                height: 50,
+            }).obj,
+        ]
 
 
         // 引用Sprite对象
@@ -111,6 +224,8 @@ export class CreateCommon4 {
             speedy: -8,
         });
         this.sp.obj.scale.set(1, 1);
+
+        this.flag = [];
     };
 
     gameLoop = (delta) => {
@@ -129,10 +244,65 @@ export class CreateCommon4 {
         } else if (this.sp.hitBorder(this.sp.obj) === "buttom") {
             this.state = this.end; // 解耦合应该写在CreateCommon.js中
         }
-
+        this.killers[1].height += this.smallKillerSpeed[1];
         b.hit(this.sp.obj, this.key, false, false, false, () => {
             this.state = this.succeed; // 碰到钥匙过关
         });
+        b.hit(this.sp.obj, this.accelerateBricks, true, false, false, () => {
+            this.sp.obj.speedy = 8; // 碰到加速砖块会飞
+        });
+        b.hit(this.sp.obj, this.switchers[0], true, false, false, () => {
+            this.flag[0] = true;
+            this.killers[2].killer = true;
+        });
+        b.hit(this.sp.obj, this.switchers[1], true, false, false, () => {
+            this.flag[1] = true;
+            this.killers[3].killer = true;
+        });
+        b.hit(this.sp.obj, this.switchers[2], true, false, false, () => {
+            this.flag[2] = true;
+            this.killers[4].killer = true;
+        });
+        b.hit(this.sp.obj, this.switchers[3], true, false, false, () => {
+            this.flag[3] = true;
+            this.killers[5].killer = true;
+        });
+
+        b.hit(this.sp.obj, this.killers, true, false, false, () => {
+            this.state = this.end;
+        });
+        for (let i = 2; i <= 5; i++) {
+            if (this.killers[i].killer === true) {
+                this.killers[i].height += this.smallKillerSpeed[i];
+                if (this.killers[i].height >= 900) {
+                    this.smallKillerSpeed[i] *= (-1);
+                }
+                if (this.killers[i].height <= 20) {
+                    this.smallKillerSpeed[i] *= (-1);
+                }
+            }
+        }
+        if (this.killers[0].killer === true) {
+            for (let i = 1; i <= 5; i++) {
+                this.killers[i].y += this.smallKillerSpeed[0];
+            }
+            this.killers[0].height += this.smallKillerSpeed[0];
+            if (this.killers[0].height >= 600) {
+                this.smallKillerSpeed[0] *= (-1);
+            }
+        }
+        if (this.flag[3] === true) {
+            for (let i = 2; i <= 5; i++) {
+                this.bricks[i - 1].y += 3;
+            }
+            for (let i = 0; i < 4; i++) {
+                this.switchers[i].y += 3;
+            }
+            b.hit(this.sp.obj, this.switchers[4], true, false, false, () => {
+                this.switchers[4].y += 9;
+                this.killers[0].killer = true;
+            });
+        }
     };
 
     end = (delta) => {
