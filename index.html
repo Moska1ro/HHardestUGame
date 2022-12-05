@@ -19,7 +19,7 @@
         if (window.innerHeight > window.innerWidth) {
             alert("请使用横屏进行游戏以获取最佳游戏体验~");
         }
-        var t = window.innerHeight / 960;
+        var t = window.innerHeight / 980;
         $('html').css("zoom", t);
         window.innerHeight = 960;
         window.innerWidth = 1920;
@@ -40,10 +40,10 @@
     let death = 0;
     import { CreateInformation } from './js/CreateInformation.js';
     import { Create } from './js/classicmap/Create.js';
-    import { CreateCommon } from './js/commonmap/CreateCommon.js'
+    import { CreateCommon4 } from './js/commonmap/CreateCommon4.js'
     $('#start').click(() => {
         document.body.innerHTML = '<audio autoplay="autoplay" loop="loop" preload="metadata" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>';
-        let game = new CreateCommon(death);
+        let game = new CreateCommon4(death);
     });
     $('#rules').click(() => {
         location.replace("./rules.html");

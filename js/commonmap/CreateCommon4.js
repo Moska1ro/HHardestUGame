@@ -113,52 +113,6 @@ export class CreateCommon4 {
                 height: 600,
             }).obj,
         ];
-        this.killers = [
-            new Item(this, {
-                src: "./images/killer.png",
-                x: 0,
-                y: 0,
-                width: window.innerWidth,
-                height: 100,
-            }).obj,
-
-
-            new Item(this, {
-                src: "./images/black.png",
-                x: 50,
-                y: 100,
-                width: 150,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/black.png",
-                x: 450,
-                y: 100,
-                width: 150,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/black.png",
-                x: 850,
-                y: 100,
-                width: 150,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/black.png",
-                x: 1250,
-                y: 100,
-                width: 150,
-                height: 50,
-            }).obj,
-            new Item(this, {
-                src: "./images/black.png",
-                x: 1650,
-                y: 100,
-                width: 150,
-                height: 50,
-            }).obj,
-        ];
 
 
         this.smallKillerSpeed = [0.5, 0.2, 10, 10, 10, 10];
@@ -210,7 +164,52 @@ export class CreateCommon4 {
                 height: 50,
             }).obj,
         ]
+        this.killers = [
+            new Item(this, {
+                src: "./images/killer.png",
+                x: 0,
+                y: 0,
+                width: window.innerWidth,
+                height: 100,
+            }).obj,
 
+
+            new Item(this, {
+                src: "./images/black.png",
+                x: 50,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 450,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 850,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 1250,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+            new Item(this, {
+                src: "./images/black.png",
+                x: 1650,
+                y: 100,
+                width: 150,
+                height: 50,
+            }).obj,
+        ];
 
         // 引用Sprite对象
         this.sp = new Player(this, {
@@ -321,7 +320,7 @@ export class CreateCommon4 {
     succeed = () => {
         this.app.ticker.stop();
         document.body.removeChild(this.app.view);
-        let nextGame = new CreateCommon4(this.death);// ?
+        $('body').append('<div style = "position:absolute;left: 450px;top: 350px;font-size: 80px;">恭喜你，成功拯救了这片天空！</div>');
     };
 
     bindRestartAfterEnd = (e) => {
