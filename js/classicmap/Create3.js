@@ -380,7 +380,8 @@ export class Create3 {
     this.app.ticker.stop();
     document.body.removeChild(this.app.view);
     $('body').append('<div style = "position:absolute;left: 450px;top: 200px;font-size: 80px;">恭喜你，成功拯救了这片天空！</div>');
-    $('body').append('<div style = "position:absolute;left: 450px;top: 600px;font-size: 80px;">戳<span style="color:0xF4AFBE"><a href ="http://39.105.111.93:8080/demo8/">这里</a></span>，在天空留下你的足迹吧~</div>')
+    let str = '<div style = "position:absolute;left: 450px;top: 600px;font-size: 80px;">戳<span style="color:0xF4AFBE"><a href =' + "http://39.105.111.93:8080/demo8?txt=" + this.death + '>这里</a></span>，在天空留下你的足迹吧~</div>'
+    $('body').append(str)
   };
 
   bindRestartAfterEnd = (e) => {
