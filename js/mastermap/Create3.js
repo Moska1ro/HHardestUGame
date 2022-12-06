@@ -13,7 +13,7 @@ var Application = PIXI.Application,
   Text = PIXI.Text,
   TextStyle = PIXI.TextStyle,
   Graphics = PIXI.Graphics;
-const texture = Texture.from("../images/player.png");
+const texture = Texture.from("./images/player.png");
 Texture.addToCache(texture, "player");
 
 export class Create3 {
@@ -54,7 +54,7 @@ export class Create3 {
     this.gameOverScene.visible = false; // 一开始没有Game over时，结束界面不可见
     this.app.stage.addChild(this.gameScene);
     this.app.stage.addChild(this.gameOverScene);
-    this.backgroundsp = new Sprite.from("../images/Clouds4.png");
+    this.backgroundsp = new Sprite.from("./images/Clouds4.png");
     this.backgroundsp.x = 0;
     this.backgroundsp.y = 0;
     this.backgroundsp.width = window.innerWidth;
