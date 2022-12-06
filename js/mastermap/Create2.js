@@ -64,14 +64,14 @@ export class Create2 {
     this.controller = new Controller(this); // 传入控制器
     this.key = [
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: 530,
         y: 40,
         width: 40,
         height: 40,
       }).obj,
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: 200,
         y: 135,
         width: 40,
@@ -82,21 +82,21 @@ export class Create2 {
     this.bricks = [
       //砖块
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 500,
         y: window.innerHeight - 120,
         width: 350,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: window.innerWidth - 130,
         y: window.innerHeight - 300,
         width: 80,
         height: 300,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 400,
         y: 500,
         width: 1300,
@@ -105,7 +105,7 @@ export class Create2 {
     ];
     this.accelerateBricks = [
       new Item(this, {
-        src: "../images/accelerateBrick.png",
+        src: "./images/accelerateBrick.png",
         x: 40,
         y: window.innerHeight - 80,
         width: 150,
@@ -113,7 +113,7 @@ export class Create2 {
       }).obj,
       //测试用
       // new Item(this, {
-      //   src: "../images/accelerateBrick.png",
+      //   src: "./images/accelerateBrick.png",
       //   x: 500,
       //   y: 501,
       //   width: 100,
@@ -122,7 +122,7 @@ export class Create2 {
     ];
     // this.decelerateBricks = [
     //   new Item(this, {
-    //     src: "../images/decelerateBrick.png",
+    //     src: "./images/decelerateBrick.png",
     //     x: 0,
     //     y: 0,
     //     width: 0,
@@ -131,7 +131,7 @@ export class Create2 {
     // ];
     this.switchers = [
       new Item(this, {
-        src: "../images/switcher.png",
+        src: "./images/switcher.png",
         x: 170,
         y: 180,
         width: 100,
@@ -142,35 +142,35 @@ export class Create2 {
     this.killers = [
       //星星周围
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 400,
         y: 0,
         width: 50,
         height: 500,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 650,
         y: 0,
         width: 50,
         height: 350,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 900,
         y: 150,
         width: 50,
         height: 350,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1150,
         y: 0,
         width: 50,
         height: 350,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1400,
         y: 150,
         width: 50,
@@ -178,14 +178,14 @@ export class Create2 {
       }).obj,
       //index : 5
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1650,
         y: 0,
         width: 50,
         height: 500,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 730,
         y: 450,
         width: 190,
@@ -193,42 +193,42 @@ export class Create2 {
       }).obj,
       // 移动的砖块上方的killer index从7开始
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 530,
         y: 550,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 780,
         y: 630,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1030,
         y: 710,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1280,
         y: 790,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1530,
         y: 870,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 450,
         y: 550,
         width: 1200,

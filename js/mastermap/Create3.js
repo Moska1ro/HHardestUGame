@@ -77,21 +77,21 @@ export class Create3 {
     this.controller = new Controller(this); // 传入控制器
     this.key = [
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: 100,
         y: 20,
         width: 40,
         height: 40,
       }).obj,
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: 400,
         y: 20,
         width: 40,
         height: 40,
       }).obj,
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: 700,
         y: 30,
         width: 40,
@@ -102,14 +102,14 @@ export class Create3 {
     this.bricks = [
       //first
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 0,
         y: window.innerHeight - 10,
         width: 250,
         height: 10,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 250,
         y: window.innerHeight - 260,
         width: 60,
@@ -117,21 +117,21 @@ export class Create3 {
       }).obj,
       //sec
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 800,
         y: window.innerHeight - 10,
         width: 100,
         height: 10,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 500,
         y: 700,
         width: 550,
         height: 60,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 0,
         y: 450,
         width: 500,
@@ -139,21 +139,21 @@ export class Create3 {
       }).obj,
       //third
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 1300,
         y: 510,
         width: 60,
         height: 450,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 760,
         y: 450,
         width: 600,
         height: 60,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 1360,
         y: window.innerHeight - 10,
         width: 560,
@@ -161,21 +161,21 @@ export class Create3 {
       }).obj,
       //forth
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 0,
         y: 150,
         width: 440,
         height: 110,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 440,
         y: 200,
         width: 1210,
         height: 60,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 1590,
         y: 260,
         width: 60,
@@ -184,7 +184,7 @@ export class Create3 {
     ];
     this.accelerateBricks = [
       new Item(this, {
-        src: "../images/accelerateBrick.png",
+        src: "./images/accelerateBrick.png",
         x: 250,
         y: window.innerHeight - 60,
         width: 60,
@@ -192,7 +192,7 @@ export class Create3 {
       }).obj,
       //测试用
       // new Item(this, {
-      //   src: "../images/accelerateBrick.png",
+      //   src: "./images/accelerateBrick.png",
       //   x: 1500,
       //   y: 200,
       //   // x: 950,
@@ -205,7 +205,7 @@ export class Create3 {
     ];
     this.decelerateBricks = [
       new Item(this, {
-        src: "../images/decelerateBrick.png",
+        src: "./images/decelerateBrick.png",
         x: 500,
         y: 400,
         width: 60,
@@ -214,7 +214,7 @@ export class Create3 {
     ];
     this.switchers = [
       new Item(this, {
-        src: "../images/switcher.png",
+        src: "./images/switcher.png",
         x: 800,
         y: 701,
         width: 100,
@@ -225,14 +225,14 @@ export class Create3 {
     this.killers = [
       //first
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 0,
         y: 705,
         width: 90,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 160,
         y: 825,
         // y: 705,
@@ -240,7 +240,7 @@ export class Create3 {
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 10,
         y: 510,
         width: 300,
@@ -248,21 +248,21 @@ export class Create3 {
       }).obj,
       // sec
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 580,
         y: window.innerHeight - 50,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 770,
         y: 760,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 960,
         y: window.innerHeight - 50,
         width: 50,
@@ -270,21 +270,21 @@ export class Create3 {
       }).obj,
       //thrid
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 150,
         y: 400,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 0,
         y: 260,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 820,
         y: 260,
         width: 60,
@@ -292,21 +292,21 @@ export class Create3 {
       }).obj,
       //forth
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1360,
         y: 510,
         width: 100,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1490,
         y: 660,
         width: 100,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1360,
         y: 810,
         width: 100,
@@ -314,21 +314,21 @@ export class Create3 {
       }).obj,
       //fifth
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1820,
         y: 260,
         width: 110,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1650,
         y: 460,
         width: 100,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1820,
         y: 660,
         width: 100,
@@ -336,35 +336,35 @@ export class Create3 {
       }).obj,
       //sixth
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 600,
         y: 0,
         width: 50,
         height: 100,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 800,
         y: 100,
         width: 50,
         height: 100,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1000,
         y: 0,
         width: 50,
         height: 100,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1200,
         y: 100,
         width: 50,
         height: 100,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1400,
         y: 0,
         width: 50,

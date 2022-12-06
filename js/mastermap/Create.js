@@ -63,7 +63,7 @@ export class Create {
     this.controller = new Controller(this); // 传入控制器
     this.key = [
       new Item(this, {
-        src: "../images/star.png",
+        src: "./images/star.png",
         x: window.innerWidth - 175,
         y: window.innerHeight - 100,
         width: 40,
@@ -74,42 +74,42 @@ export class Create {
     this.bricks = [
       //砖块
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 300,
         y: window.innerHeight - 50,
         width: 1220,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 1520,
         y: 150,
         width: 80,
         height: window.innerHeight - 150,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 0,
         y: window.innerHeight - 50 - 180 - 50,
         width: 1450,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 200,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50,
         width: 1320,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 0,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 120 - 60,
         width: 1250,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/brick.png",
+        src: "./images/brick.png",
         x: 250,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 120 - 50 - 130,
         width: 1270,
@@ -118,7 +118,7 @@ export class Create {
     ];
     this.accelerateBricks = [
       new Item(this, {
-        src: "../images/accelerateBrick.png",
+        src: "./images/accelerateBrick.png",
         x: 470,
         y: window.innerHeight - 50,
         width: 100,
@@ -126,7 +126,7 @@ export class Create {
       }).obj,
       //测试用
       // new Item(this, {
-      //   src: "../images/accelerateBrick.png",
+      //   src: "./images/accelerateBrick.png",
       //   x: 1400,
       //   y: 151,
       //   width: 100,
@@ -135,14 +135,14 @@ export class Create {
     ];
     this.switchers = [
       new Item(this, {
-        src: "../images/switcher.png",
+        src: "./images/switcher.png",
         x: 700,
         y: window.innerHeight - 50,
         width: 100,
         height: 48,
       }).obj,
       new Item(this, {
-        src: "../images/switcher.png",
+        src: "./images/switcher.png",
         x: 700,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 120 - 59.9,
         width: 100,
@@ -150,7 +150,7 @@ export class Create {
       }).obj,
       //美化作用
       new Item(this, {
-        src: "../images/switcher.png",
+        src: "./images/switcher.png",
         x: 700,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 120 - 59.9,
         width: 100,
@@ -160,35 +160,35 @@ export class Create {
 
     this.killers = [
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1150,
         y: window.innerHeight - 50 - 180,
         width: 50,
         height: 0,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 350,
         y: window.innerHeight - 50 - 180 - 50 - 45,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 550,
         y: window.innerHeight - 50 - 180 - 50 - 90,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 750,
         y: window.innerHeight - 50 - 180 - 50 - 135,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 950,
         y: window.innerHeight - 50 - 180 - 50 - 180,
         width: 50,
@@ -196,21 +196,21 @@ export class Create {
       }).obj,
       //左移黑洞
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1350,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 40,
         width: 30,
         height: 30,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1490,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 130,
         width: 30,
         height: 30,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 1350,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 130,
         width: 170,
@@ -218,7 +218,7 @@ export class Create {
       }).obj,
       //index:8 the killer can move
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 250,
         y: window.innerHeight - 50 - 180 - 50 - 180 - 50 - 120 - 50 - 80,
         width: 70,
@@ -226,21 +226,21 @@ export class Create {
       }).obj,
       //右移黑洞
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 120,
         y: 120,
         width: 30,
         height: 30,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 0,
         y: 0,
         width: 30,
         height: 30,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: 0,
         y: 0,
         width: 150,
@@ -248,21 +248,21 @@ export class Create {
       }).obj,
       //右侧移动killers
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: window.innerWidth - 320,
         y: 250,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: window.innerWidth - 220,
         y: 520,
         width: 50,
         height: 50,
       }).obj,
       new Item(this, {
-        src: "../images/killer.png",
+        src: "./images/killer.png",
         x: window.innerWidth - 120,
         y: 790,
         width: 50,
