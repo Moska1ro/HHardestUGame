@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./tools/pixi.min.js"></script>
+    <script src="./tools/bump.js"></script>
+    <script src="./tools/spriteUtilities.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let u = window.innerHeight / 980;
+        let v = window.innerWidth / 1940;
+        if (window.innerWidth / window.innerHeight >= 16 / 9) {
+            $('html').css("zoom", u);
+        } else {
+            $('html').css("zoom", v);
+        }
+        window.innerHeight = 960;
+        window.innerWidth = 1920;
+    </script>
+    <title>模式选择</title>
+    <audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签
+    </audio>
+</head>
+
+<body background="./images/Clouds6.png" style="background-repeat:no-repeat">
+    <div style="color: #bec8c8;font-weight: bold; position:absolute;left: 780px;top: 40px;font-size: 80px;">模式选择</div>
+    <button id="common" class="btn btn-light"
+        style="color: #3c5b7b;font-weight: bold; position:absolute;left: 250px;top: 420px;font-size: 100px;width: 600px;">普通模式</button>
+    <button id="master" class="btn btn-light"
+        style="color: #3c5b7b;font-weight: bold; position:absolute;left: 1050px;top: 420px;font-size: 100px;width: 600px;">大师模式</button>
+
+    <button id="return" class="btn btn-primary"
+        style="position:absolute;left: 780px;top: 820px;font-size: 30px;width: 320px;">返回</button>
+</body>
+<script type="module">
+    import { Create } from './js/mastermap/Create.js';
+    import { CreateCommon } from './js/commonmap/CreateCommon.js'
+    let death = 0;
+    $('#common').click(() => {
+        document.body.innerHTML = '';
+        $('body').append('<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>');
+        let info = new CreateCommon(death);
+    });
+    $('#master').click(() => {
+        document.body.innerHTML = '';
+        $('body').append('<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>');
+        let info = new Create(death);
+    });
+    $('#return').click(() => {
+        location.replace("./index.html");
+    });
+</script>
+
+</html>
