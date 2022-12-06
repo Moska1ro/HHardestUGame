@@ -15,11 +15,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
-        if (window.innerHeight > window.innerWidth) {
-            alert("请使用横屏进行游戏以获取最佳游戏体验~");
+        let u = window.innerHeight / 980;
+        let v = window.innerWidth / 1940;
+        if (window.innerWidth / window.innerHeight >= 16 / 9) {
+            $('html').css("zoom", u);
+        } else {
+            $('html').css("zoom", v);
         }
-        var t = window.innerHeight / 980;
-        $('html').css("zoom", t);
         window.innerHeight = 960;
         window.innerWidth = 1920;
     </script>
@@ -39,15 +41,17 @@
         style="position:absolute;left: 780px;top: 820px;font-size: 30px;width: 320px;">返回</button>
 </body>
 <script type="module">
-    import { Create } from './js/classicmap/Create.js';
+    import { Create } from './js/mastermap/Create.js';
     import { CreateCommon } from './js/commonmap/CreateCommon.js'
     let death = 0;
     $('#common').click(() => {
         document.body.innerHTML = '';
+        $('body').append('<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>');
         let info = new CreateCommon(death);
     });
     $('#master').click(() => {
         document.body.innerHTML = '';
+        $('body').append('<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>');
         let info = new Create(death);
     });
     $('#return').click(() => {
