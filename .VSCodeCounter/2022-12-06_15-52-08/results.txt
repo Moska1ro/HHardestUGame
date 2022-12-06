@@ -1,0 +1,93 @@
+Date : 2022-12-06 15:52:08
+Directory : e:\WebApp
+Total : 39 files,  7259 codes, 1143 comments, 1257 blanks, all 9659 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |         15 |      4,230 |      1,091 |        620 |      5,941 |
+| Markdown   |          3 |      2,417 |          0 |        569 |      2,986 |
+| HTML       |          7 |        304 |         18 |         17 |        339 |
+| Java       |          8 |        231 |         17 |         44 |        292 |
+| YAML       |          1 |         30 |          7 |          6 |         43 |
+| XML        |          2 |         27 |          0 |          1 |         28 |
+| Properties |          2 |         16 |         10 |          0 |         26 |
+| CSS        |          1 |          4 |          0 |          0 |          4 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                        | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                           |         39 |      7,259 |      1,143 |      1,257 |      9,659 |
+| .github                                                                     |          1 |         30 |          7 |          6 |         43 |
+| .github\workflows                                                           |          1 |         30 |          7 |          6 |         43 |
+| css                                                                         |          1 |          4 |          0 |          0 |          4 |
+| document                                                                    |          2 |      2,379 |          0 |        563 |      2,942 |
+| js                                                                          |         11 |      2,767 |        152 |        152 |      3,071 |
+| js\commonmap                                                                |          4 |      1,196 |         28 |         81 |      1,305 |
+| js\mastermap                                                                |          3 |      1,246 |        116 |         55 |      1,417 |
+| serversrc                                                                   |         15 |        371 |         36 |         48 |        455 |
+| serversrc\.settings                                                         |          1 |         10 |          0 |          1 |         11 |
+| serversrc\WebContent                                                        |          4 |        114 |          9 |          3 |        126 |
+| serversrc\WebContent\WEB-INF                                                |          1 |         17 |          0 |          0 |         17 |
+| serversrc\build                                                             |          1 |          8 |          5 |          0 |         13 |
+| serversrc\build\classes                                                     |          1 |          8 |          5 |          0 |         13 |
+| serversrc\src                                                               |          9 |        239 |         22 |         44 |        305 |
+| serversrc\src\com                                                           |          1 |         62 |          0 |          4 |         66 |
+| serversrc\src\com\atguigu                                                   |          1 |         62 |          0 |          4 |         66 |
+| serversrc\src\com\atguigu\servlets                                          |          1 |         62 |          0 |          4 |         66 |
+| serversrc\src\dao_                                                          |          7 |        169 |         17 |         40 |        226 |
+| serversrc\src\dao_\dao                                                      |          3 |         40 |          0 |         10 |         50 |
+| serversrc\src\dao_\pojo                                                     |          2 |         78 |          0 |         21 |         99 |
+| serversrc\src\dao_\test                                                     |          1 |          9 |         17 |          4 |         30 |
+| serversrc\src\dao_\utils                                                    |          1 |         42 |          0 |          5 |         47 |
+| tools                                                                       |          4 |      1,463 |        939 |        468 |      2,870 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                    | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| e:\WebApp\.github\workflows\static.yml                                      | YAML       |         30 |          7 |          6 |         43 |
+| e:\WebApp\README.md                                                         | Markdown   |         38 |          0 |          6 |         44 |
+| e:\WebApp\announcement.html                                                 | HTML       |         46 |          3 |          4 |         53 |
+| e:\WebApp\css\index.css                                                     | CSS        |          4 |          0 |          0 |          4 |
+| e:\WebApp\document\Bump.md                                                  | Markdown   |        371 |          0 |         56 |        427 |
+| e:\WebApp\document\学习PIXI.md                                                | Markdown   |      2,008 |          0 |        507 |      2,515 |
+| e:\WebApp\index.html                                                        | HTML       |         58 |          0 |          3 |         61 |
+| e:\WebApp\js\Controller.js                                                  | JavaScript |         16 |          0 |          0 |         16 |
+| e:\WebApp\js\CreateInformation.js                                           | JavaScript |        223 |          5 |         12 |        240 |
+| e:\WebApp\js\Item.js                                                        | JavaScript |         13 |          0 |          1 |         14 |
+| e:\WebApp\js\Player.js                                                      | JavaScript |         73 |          3 |          3 |         79 |
+| e:\WebApp\js\commonmap\CreateCommon.js                                      | JavaScript |        279 |          7 |         23 |        309 |
+| e:\WebApp\js\commonmap\CreateCommon2.js                                     | JavaScript |        243 |          7 |         18 |        268 |
+| e:\WebApp\js\commonmap\CreateCommon3.js                                     | JavaScript |        349 |          7 |         18 |        374 |
+| e:\WebApp\js\commonmap\CreateCommon4.js                                     | JavaScript |        325 |          7 |         22 |        354 |
+| e:\WebApp\js\mastermap\Create.js                                            | JavaScript |        404 |         31 |         15 |        450 |
+| e:\WebApp\js\mastermap\Create2.js                                           | JavaScript |        356 |         39 |         18 |        413 |
+| e:\WebApp\js\mastermap\Create3.js                                           | JavaScript |        486 |         46 |         22 |        554 |
+| e:\WebApp\pattern.html                                                      | HTML       |         55 |          3 |          4 |         62 |
+| e:\WebApp\rules.html                                                        | HTML       |         48 |          3 |          3 |         54 |
+| e:\WebApp\serversrc\.settings\org.eclipse.wst.common.project.facet.core.xml | XML        |         10 |          0 |          1 |         11 |
+| e:\WebApp\serversrc\WebContent\Test.html                                    | HTML       |         35 |          3 |          2 |         40 |
+| e:\WebApp\serversrc\WebContent\WEB-INF\web.xml                              | XML        |         17 |          0 |          0 |         17 |
+| e:\WebApp\serversrc\WebContent\index.jsp                                    | HTML       |         28 |          3 |          1 |         32 |
+| e:\WebApp\serversrc\WebContent\show.jsp                                     | HTML       |         34 |          3 |          0 |         37 |
+| e:\WebApp\serversrc\build\classes\druid.properties                          | Properties |          8 |          5 |          0 |         13 |
+| e:\WebApp\serversrc\src\com\atguigu\servlets\addServlet.java                | Java       |         62 |          0 |          4 |         66 |
+| e:\WebApp\serversrc\src\dao_\dao\actorDao.java                              | Java       |          3 |          0 |          3 |          6 |
+| e:\WebApp\serversrc\src\dao_\dao\basicDao.java                              | Java       |         34 |          0 |          5 |         39 |
+| e:\WebApp\serversrc\src\dao_\dao\victoryDao.java                            | Java       |          3 |          0 |          2 |          5 |
+| e:\WebApp\serversrc\src\dao_\pojo\Actor.java                                | Java       |         39 |          0 |         11 |         50 |
+| e:\WebApp\serversrc\src\dao_\pojo\victory.java                              | Java       |         39 |          0 |         10 |         49 |
+| e:\WebApp\serversrc\src\dao_\test\testDao.java                              | Java       |          9 |         17 |          4 |         30 |
+| e:\WebApp\serversrc\src\dao_\utils\JDBCUtilsByDruid.java                    | Java       |         42 |          0 |          5 |         47 |
+| e:\WebApp\serversrc\src\druid.properties                                    | Properties |          8 |          5 |          0 |         13 |
+| e:\WebApp\tools\bump.js                                                     | JavaScript |        630 |        616 |        223 |      1,469 |
+| e:\WebApp\tools\jquery-3.6.1.min.js                                         | JavaScript |          1 |          1 |          0 |          2 |
+| e:\WebApp\tools\pixi.min.js                                                 | JavaScript |         14 |          8 |          1 |         23 |
+| e:\WebApp\tools\spriteUtilities.js                                          | JavaScript |        818 |        314 |        244 |      1,376 |
+| Total                                                                       |            |      7,259 |      1,143 |      1,257 |      9,659 |
++-----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
