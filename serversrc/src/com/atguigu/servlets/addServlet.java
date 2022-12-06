@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class addServlet extends HttpServlet {
+public class AddServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");

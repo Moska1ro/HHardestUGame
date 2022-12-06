@@ -9,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class testDao {
-    /*
     @Test
     public void testActorDao(){
         actorDao actorDao = new actorDao();
@@ -17,13 +16,12 @@ public class testDao {
         for(Actor actor:actorList){
             System.out.println(actor);
         }
-    }*/
-    /*
+    }
     @Test
     public void testInsert() {
         victoryDao victoryDao = new victoryDao();
         String name="zhangsan";
         String remark="lisi";
         victoryDao.update("insert into victory values(?,?)",name,remark);
-    }*/
+    }
 }
