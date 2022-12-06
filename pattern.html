@@ -41,7 +41,7 @@
         style="position:absolute;left: 780px;top: 820px;font-size: 30px;width: 320px;">返回</button>
 </body>
 <script type="module">
-    import { Create3 } from './js/mastermap/Create3.js';
+    import { Create } from './js/mastermap/Create.js';
     import { CreateCommon } from './js/commonmap/CreateCommon.js'
     let death = 0;
     $('#common').click(() => {
@@ -52,7 +52,7 @@
     $('#master').click(() => {
         document.body.innerHTML = '';
         $('body').append('<audio autoplay="autoplay" loop="loop" preload="auto" src="./sounds/iwan.mp3">你的浏览器版本太低，不支持audio标签</audio>');
-        let info = new Create3(death);
+        let info = new Create(death);
     });
     $('#return').click(() => {
         location.replace("./index.html");
