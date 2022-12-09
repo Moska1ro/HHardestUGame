@@ -17,7 +17,14 @@
     <script>
         let u = window.innerHeight / 980;
         let v = window.innerWidth / 1940;
-        if (window.innerWidth / window.innerHeight >= 16 / 9) {
+        // if (window.innerWidth / window.innerHeight >= 16 / 9) {
+        //     $('html').css("zoom", u);
+        // } else {
+        //     $('html').css("zoom", v);
+        // }
+        // let u = document.querySelector('html').clientHeight / 960;
+        // let v = document.querySelector('html').clientWidth / 1920;
+        if (u < v) {
             $('html').css("zoom", u);
         } else {
             $('html').css("zoom", v);
