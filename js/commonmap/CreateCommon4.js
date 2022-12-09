@@ -23,8 +23,8 @@ export class CreateCommon4 {
         this.setup(); // 开始游戏
     }
     setup = () => {
-        // window.innerHeight = 960;
-        // window.innerWidth = 1920;
+        window.innerHeight = 960;
+        window.innerWidth = 1920;
         this.app = new Application({
             width: window.innerWidth,
             height: window.innerHeight,
